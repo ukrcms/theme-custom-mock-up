@@ -1,0 +1,97 @@
+<div class="full-post">
+
+  <h2 class="full-post-title">
+    <?php echo $model->title ?>
+  </h2>
+
+  <div class="meta-full-post">
+    Дата публікації: <span><?php echo strftime("%Y-%m-%d %H:%I", $model->date) ?></span><br/>
+  </div>
+  <!--meta-->
+
+  <div class="full-post-content"><p>
+      <?php if (!empty($model->image) and $image = $model->image->main()) { ?>
+        <a href="<?php echo $image->getUrl($model->sef) ?>" target="_blank" title="<?php echo $model->title ?>" class="alignnone size-full wp-image-37">
+          <img src="<?php echo $image->getUrl($model->sef) ?>" width="<?php echo $image->getWidth() ?>" height="<?php echo $image->getHeight() ?>" alt="<?php echo $model->sef ?>" title="<?php echo $model->title ?>"/>
+        </a>
+      <?php } ?>
+    </p>
+
+    <?php echo $model->shorttext ?>
+
+    <?php echo $model->text ?>
+  </div>
+
+  <div class="full-post-pages"></div>
+
+
+  <div class="clearfix"></div>
+
+
+  <div id="comments-wrap">
+    <?php $comments = $model->comments(); ?>
+    <?php if ($commentsNum = count($comments) and $commentsNum > 0) { ?>
+
+      <h3 id="comments-number">Коментарів: (<?php echo $commentsNum ?>)</h3>
+
+
+      <ol class="commentlist">
+        <?php foreach ($comments as $commentItem) { ?>
+
+          <li class="comment-single">
+            <div class="comment-body" id="div-comment-6">
+              <div class="comment-author vcard">
+                <img class="avatar" alt="<?php echo $commentItem->name ?>" src="http://www.gravatar.com/avatar/<?php echo md5(strtolower(trim($commentItem->email))) ?>?s=50&d=wavatar" width="50" height="50"/>
+                <cite class="fn"><?php echo $commentItem->name ?></cite>
+              </div>
+
+              <div class="comment-meta commentmetadata">
+                  <?php echo strftime('%Y-%m-%d %H:%I', $commentItem->time) ?></div>
+              <p><?php echo $commentItem->getCommentHtml(); ?></p>
+
+              <div class="reply">
+                <a href="#comment" class="comment-reply-link">Відповісти</a>
+              </div>
+            </div>
+          </li>
+
+
+        <?php } ?>
+      </ol>
+
+    <?php } ?>
+
+
+
+    <div id="comment">
+
+      <h3 class="postcomment">Коментувати</h3>
+
+      <form id="commentform" method="post" action="?addcomment">
+
+        <p>
+          <input type="text" tabindex="1" size="28" value="" class="textarea" id="author" name="comment[name]">
+          * <label for="author">Імя</label></p>
+
+        <p>
+          <input type="text" class="textarea" tabindex="2" size="28" value="" id="email" name="comment[email]">
+          * <label for="email">E-mail</label></p>
+
+        <p>
+          <input type="text" class="textarea" tabindex="3" size="28" value="" id="url" name="comment[url]">
+          <label for="url"><acronym title="Uniform Resource Identifier">URL</acronym></label>
+        </p>
+
+        <p>
+          <textarea class="textarea" tabindex="4" rows="10" cols="60" id="comment" name="comment[comment]"></textarea>
+        </p>
+
+        <p>
+          <input type="submit" class="cbutton" value="Додати коментар" tabindex="5" id="submit" name="submit">
+        </p>
+
+      </form>
+    </div>
+  </div>
+
+</div>

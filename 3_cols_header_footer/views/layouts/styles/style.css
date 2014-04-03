@@ -1,0 +1,269 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Структура сайту */
+
+body {
+	background-color: #FFF;
+	margin: 5;
+	padding: 0;
+}
+
+ul, ol, dl { 
+	padding: 0;
+	margin: 0px 25px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 5px 0px;
+	color: #000;
+}
+
+a img { 
+	border: none;
+}
+
+a:link {
+	color: #F90;
+}
+
+a:visited {
+	color: #F90;
+}
+
+a:hover, a:active, a:focus { 
+	color: #FB0;
+}
+
+#global_container{
+	position: static;
+	margin: 0px auto;
+	width: 1058px;
+	height: auto;
+}
+
+#header{
+	position: static;
+	margin-bottom: 10px;
+	padding: 10px;
+	width: auto;
+	height: auto;
+	background: #FFF url(../images/header_bg.png) repeat;	
+	border: #FF0 solid 2px;
+}
+
+#leftcol{
+	position: static;
+	padding: 10px;
+	width: 155px;
+	float: left;
+	border: #FF0 solid 2px;
+}
+
+#content{
+	position: static;
+	margin: 0px 10px;
+	padding: 10px;
+	width: 656px;
+	float: left;
+	border: #FF0 solid 2px;
+}
+
+#rightcol{
+	position: static;
+	padding: 10px;
+	width: 155px;
+	float: left;
+	border: #FF0 solid 2px;
+}
+
+#end_float{
+	float: none;
+	clear: both;
+}
+
+#footer{
+	position: static;
+	margin-top: 10px;
+	padding: 10px;
+	width: auto;
+	height: auto;
+	border: #FF0 solid 2px;	
+}
+
+/* Стилі системи керування контентом */
+
+/* Для правильного обтікання елементів */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* Вигляд допису в списку дописів */
+.single-post {
+  border: 1px dotted #FF6600;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.single-post-image {
+  margin: 0px;
+  max-width: 800px;
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.single-post-text {
+  margin: 5px 0px;
+}
+
+.single-post-text h2 {
+  font-weight: 200;
+}
+
+.single-post-content {
+  padding-left: 7px;
+  color: #333;
+}
+
+.meta {
+  padding: 5px 0px 0px 7px;
+  color: #555;
+}
+
+/* Вигляд відкритого допису */
+.full-post {
+  border: 1px dotted #FF6600;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.full-post img {
+  padding-left: 5px;
+  max-width: 1024px;
+  overflow: hidden;
+}
+
+.full-post h2.full-post-title {
+  font-weight: 200;
+}
+
+.meta-full-post {
+  padding: 5px 0px 0px 7px;
+  color: #555;
+}
+
+.full-post-content {
+  padding-left: 5px;
+}
+
+.full-post-pages {
+  margin-bottom: 10px;
+}
+
+.full-post p {
+  color: #222;
+}
+
+.full-post ol {
+  list-style-type: decimal;
+  padding: 5px 35px;
+}
+
+/* Коментарі */
+#comments-wrap {
+  padding-bottom: 10px;
+}
+
+h3#comments-number, h3.postcomment {
+  padding-left: 5px;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+ol.commentlist {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+
+ol.commentlist li {
+  background-color: #FEB;
+  position: relative;
+  margin-bottom: 10px;
+  padding: 10px 10px 10px 80px;
+}
+
+ol.commentlist li div.comment-author {
+  padding: 0 0px 0 0;
+}
+
+ol.commentlist li div.vcard {
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 16px;
+  padding-bottom: 5px;
+}
+
+ol.commentlist li div.vcard cite.fn {
+  font-style: normal;
+}
+
+ol.commentlist li div.vcard img.avatar {
+  position: absolute;
+  padding: 2px;
+  top: 10px;
+  left: 10px;
+  border: 3px solid #FFF;
+}
+
+ol.commentlist li div.comment-meta {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #555;
+  text-align: right;
+}
+
+ol.commentlist li p {
+  font-size: 14px;
+}
+
+ol.commentlist li div.reply {
+  font-size: 12px;
+}
+
+#respond {
+  padding: 0px 0 0;
+}
+
+form#commentform input {
+  margin-top: 10px;
+  padding: 0px 5px;
+  width: 260px;
+  height: 30px;
+  border: 1px solid #EEE;
+  color: #AAA;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+form#commentform textarea {
+  padding: 5px;
+  margin-top: 10px;
+  width: 340px;
+  border: 1px solid #EEE;
+  overflow: auto;
+  color: #AAA;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+form#commentform input#submit {
+  width: 150px;
+  background: #f8f8f8;
+  color: #888;
+}
